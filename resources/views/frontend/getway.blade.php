@@ -1,9 +1,11 @@
 @extends('layouts.frontend_app')
-@section('gateway')
+@section('getway')
     active
 @endsection
+@section('title')
+    Getways | TRINITY Official Website
+@endsection
 @section('frontend_content')
-  
 
     <!-- gateway-banner start -->
     <section id="gateway-banner">
@@ -17,21 +19,22 @@
     </section>
     <!-- gateway-banner ends -->
 
+
+
+
     <!-- slider-text-canvas start -->
     <div id="slider-text-canvas">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                @foreach ($sliders as $slider)
+                <div class="carousel-item {{ $loop->index === 0 ? "active" : " "  }}">
                     <div class="text">
-                        <h4>Growing Up Embedded In Different Cities,
-                            Countries, And Cultures, Trinity Created A
-                            Unique Travel Experience That Combines And
-                            Cultivates Both The Jet Setters Dream With A
-                            Holistic Mindful Lifestyle.</h4>
+                        <h4>{{ $slider->description }}</h4>
                     </div>
-                    <img class="d-block w-100" src="{{ asset('frontend_asset') }}/images/slider-3.jpg" alt="First slide">
+                    <img class="d-block w-100" src="{{ asset('uploads/getway_slider') }}/{{ $slider->bg }}" alt="{{ $slider->bg }}">
                 </div>
-                <div class="carousel-item">
+                @endforeach
+                {{-- <div class="carousel-item">
                     <div class="text">
                         <h4>"Our Getaways Are Carefully Curated To
                             Cultivate Both Mindfulness And Luxury Living.
@@ -53,7 +56,7 @@
                             Disconnect In Order To Reconnect.”</h4>
                     </div>
                     <img class="d-block w-100" src="{{ asset('frontend_asset') }}/images/slider-2.jpg" alt="Third slide">
-                </div>
+                </div> --}}
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -88,13 +91,37 @@
     </section>
     <!--video-part ends-->
 
+
     <!-- still-offering start-->
     <section id="still-offering">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <h4>Focus on Helping People with our services</h4>
-                    <a href="#">Learn More</a>
+        <div class="jarallax">
+            <img class="jarallax-img" src="{{ asset('frontend_asset') }}/images/gateway/Experiences_Beach.jpg" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <h4>THE STILL PROJECT GATEWAY | GETAWAY</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                        <a href="#">Click Here</a>
+                        <a href="#">Essentials</a>
+                        <a href="#">Gateways</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- still-offering ends-->
+
+    <!-- still-offering start-->
+    <section id="still-offering-enjoy">
+        <div class="jarallax">
+            <img class="jarallax-img" src="{{ asset('frontend_asset') }}/images/gateway/friends.jpg" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 m-auto text-center">
+                        <h4>ENJOY THE WEEK</h4>
+                        <h5>Lorem ipsum dolor sit amet consectetur .</h5>
+                        <a href="#">Click Here</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -106,13 +133,15 @@
         <div class="row text-center">
             <div class="col-lg-6">
                 <div class="first-part">
-                    <h4>APPLY NOW TO GETAWAY</h4>
+                    <h4>IMMERSION</h4>
+                    <p>Lorem ipsum dolor sit amet,</p>
                     <a href="#">Learn More</a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="second-part">
-                    <h4>APPLY NOW TO GETAWAY</h4>
+                    <h5>EXPERIENCE</h5>
+                    <h4>STAR COLLECTOR</h4>
                     <a href="#">Learn More</a>
                 </div>
             </div>
@@ -120,13 +149,108 @@
     </section>
     <!-- apply-now ends -->
 
+    <!-- still-offering-two start-->
+    <section id="still-offering-two">
+        <div class="jarallax">
+            <img class="jarallax-img" src="{{ asset('frontend_asset') }}/images/gateway/gateway-04.jpg" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <h4>EAT AND DRINK</h4>
+                        <h5>THE MAIN FEATURE OF PAPAYA BEACH</h5>
+                        <p>Lorem ipsum dolor sit amet,em ipsum dolor sit amet,em ipsum dolor sit amet,em ipsum dolor sit
+                            amet,</p>
+                        <a href="#">Click Here</a>
+                        <a href="#">Essentials</a>
+                        <a href="#">Gateways</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- still-offering-two ends-->
+
+    <!-- still-offering-two start-->
+    <section id="still-offering-two">
+        <div class="jarallax">
+            <img class="jarallax-img" src="{{ asset('frontend_asset') }}/images/gateway/mentee-03.png" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <h4>ADVENTURE</h4>
+                        <h5>THE MAIN FEATURE OF PAPAYA BEACH</h5>
+                        <p>Lorem ipsum dolor sit amet,em ipsum dolor sit amet,em ipsum dolor sit amet,em ipsum dolor sit
+                            amet,</p>
+                        <a href="#">Click Here</a>
+                        <a href="#">Essentials</a>
+                        <a href="#">Gateways</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- still-offering-two ends-->
+
+    <!-- join-community start-->
+    <section id="join-community">
+        <div class="join-community-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="left-part">
+                            <h4>JOIN OUR COMMUNITY</h4>
+                            <p>Investigationes demonstraverunt lectoresl ectores legere me lius </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-left">
+                        <div class="right-part">
+                            @if (session('join_community'))
+                            <li class="text-success">{{ session('join_community') }}</li>
+                            @endif
+                            <form action="{{ route('join.our.community') }}" method="POST" >
+                                @csrf
+                                <input class="name" type="text" id="fname" name="name" placeholder="Your Name"><br><br>
+                                <input type="text" class="email" placeholder="Your email address" name="email"> <br> <br>
+                                <button class="link-button" type="submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- join-community ends-->
+
+    <!-- still-offering start-->
+    <section id="still-offering">
+        <div class="jarallax">
+            <img class="jarallax-img" src="{{ asset('frontend_asset') }}/images/gateway/fisherman-g562916a0d_1920.jpg" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 m-auto text-center">
+                        <h4>FIND OUT ALL OUR BEST SERVICE</h4>
+                        <h5>THE MAIN FEATURE OF PAPAYA BEACH</h5>
+                        <a href="#">Click Here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- still-offering ends-->
 
     <!-- mail-part start -->
     <section id="mail-part-contact">
         <div class="mail-overlay">
             <h2>‘STAY UP TO DATE WITH STILL!’</h2>
-            <input type="text" placeholder="Your email address">
-            <a class="link-button" href="" target="_blank">SIGN UP</a>
+            
+            @if (session('send_newsletter'))
+            <li class="text-success">{{ session('send_newsletter') }}</li>
+            @endif
+            <form action="{{ route('signup.letter') }}" method="post">
+                @csrf
+                <input type="text" placeholder="Your email address">
+                <button class="link-button" type="submit">SIGN UP</button>
+            </form>
         </div>
     </section>
     <!-- mail-part ends -->
@@ -142,42 +266,14 @@
                 </div>
             </div>
             <div class="row insta-slide">
+                @foreach ($movements as $movement)
                 <div class="col-lg-3">
                     <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/1.jpg"
-                                alt=""></a>
+                        <a href="{{ $movement->link }}" target="_blank"><img src="{{ asset('uploads/movement') }}/{{ $movement->photo }}"
+                                alt="{{ $movement->photo }}"></a>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/2.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/3.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/4.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/5.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/6.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

@@ -2,9 +2,10 @@
 @section('history')
     active
 @endsection
+@section('title')
+    History-Detail | TRINITY Official Website
+@endsection
 @section('frontend_content')
-    
-
 
     <!-- history-details-body start -->
     <section id="history-details-body">
@@ -42,7 +43,7 @@
                     </li>
                 </ul>
                 <div class="cross-part">
-                    <a href="{{ route('history') }}">&#10005;</a>
+                    <a href="{{ route('history.details') }}">&#10005;</a>
                 </div>
             </div>
         </div>
@@ -77,7 +78,7 @@
                     </div>
                 </div>
                 <div class="col-lg-1 cross-part">
-                    <a href="{{ route('history') }}">&#10005;</a>
+                    <a href="{{ route('history.details') }}">&#10005;</a>
                 </div>
                 <div class="next-prev">
                     <a href="#">NEXT - 1910 <i class="fas fa-chevron-right"></i></a>

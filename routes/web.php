@@ -42,6 +42,8 @@ Route::get('/insider', 'FrontendController@insider')->name('insider');
 Route::get('/gateway', 'FrontendController@gateway')->name('gateway');
 Route::get('/contact', 'FrontendController@contact')->name('contact');
 Route::get('/history-details', 'FrontendController@historydetails')->name('history.details');
+Route::post('/signup-letter-post', 'FrontendController@signupletter')->name('signup.letter');
+Route::post('/join/our/community', 'FrontendController@joinourcommunity')->name('join.our.community');
 
 
 //ExtraController 
@@ -56,6 +58,8 @@ Route::post('/still/banner/two/update/{id}', 'ExtraController@stillbannerupdatet
 Route::post('/service/banner/update/{id}', 'ExtraController@servicebannerupdate')->name('service.banner.update');
 Route::post('/service/detail/update/{id}', 'ExtraController@servicedetailupdate')->name('service.detail.update');
 Route::post('/shop/banner/update/{id}', 'ExtraController@shopbannerupdate')->name('shop.banner.update');
+Route::post('/logo/update/{id}', 'ExtraController@logoupdate')->name('logo.update');
+Route::post('/still/focus/update/{id}', 'ExtraController@stillfocusupdate')->name('still.focus.update');
 
 
 // Auth::routes();
@@ -91,3 +95,7 @@ Route::resource('home/getway', 'GetwayController');
 
 //ContactBoxController
 Route::resource('home/contact/box', 'ContactBoxesController');
+
+
+//TestimonialController
+Route::resource('home/testimonial', 'TestimonialController');

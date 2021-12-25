@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Histroy_banner;
 use App\Home_video;
 use App\Interview_story;
+use App\Logo;
 use App\Publication_banner;
 use App\Service_banner;
 use App\Service_detail;
 use App\Shop_banner;
 use App\Still_banner;
 use App\Still_banner_two;
+use App\Still_focus;
 use Illuminate\Http\Request;
 use Image;
 
@@ -28,6 +30,8 @@ class ExtraController extends Controller
             'service_banner' => Service_banner::find(1),
             'service_detail' => Service_detail::find(1),
             'shop_banner' => Shop_banner::find(1),
+            'logo' => Logo::find(1),
+            'focus' => Still_focus::find(1),
         ]);
     }
     public function homepresentationpost(Request $request, $id){
@@ -185,5 +189,45 @@ class ExtraController extends Controller
             return back()->withErrors('No file was uploaded');
         }
 
+    }
+    public function logoupdate(Request $request, $id) {
+        if ($request->hasFile('logo')) {
+            if(Logo::find(1)->logo != 'default.png'){
+               $old_photo_location = 'public/uploads/logo/'.Logo::find(1)->logo;
+                unlink(base_path($old_photo_location));
+            }
+            $uploaded_photo = $request->file('logo');
+            $new_photo_name = $id.".".$uploaded_photo->getClientOriginalExtension();
+            $new_photo_location = 'public/uploads/logo/'.$new_photo_name;
+           Image::make($uploaded_photo)->save(base_path($new_photo_location));
+           Logo::find(1)->update([
+              'logo' =>  $new_photo_name,
+           ]);
+           return back()->with('update_logo', 'Logo updated successfully!');
+        } else {
+            return back()->withErrors('No file was uploaded');
+        }
+    }
+    public function stillfocusupdate(Request $request, $id) {
+        
+
+        Still_focus::find($id)->update($request->except('_token', 'bg'));
+        
+        if ($request->hasFile('bg')) {
+            if(Still_focus::find(1)->bg != 'default.png'){
+               $old_photo_location = 'public/uploads/still_focus/'.Still_focus::find(1)->bg;
+                unlink(base_path($old_photo_location));
+            }
+            $uploaded_photo = $request->file('bg');
+            $new_photo_name = $id.".".$uploaded_photo->getClientOriginalExtension();
+            $new_photo_location = 'public/uploads/still_focus/'.$new_photo_name;
+           Image::make($uploaded_photo)->save(base_path($new_photo_location));
+           Still_focus::find(1)->update([
+              'bg' =>  $new_photo_name,
+           ]);
+           return back()->with('still_focus', 'Updated successfully!');
+        } else {
+            return back()->withErrors('No file was uploaded');
+        }
     }
 }

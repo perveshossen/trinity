@@ -18,6 +18,70 @@
     <h5> Update Parts</h5>
   </div><!-- sl-page-title -->
     <div class="container">
+      <div class="row mb-5">
+          <div class="col-lg-4">
+              @if (session('update_logo'))
+              <div class="alert alert-success">{{ session('update_logo') }}</div>
+              @endif
+              <div class="card">
+                  <div class="card-header">Update Logo</div>
+                  <div class="card-body">
+                      <form method="POST" action="{{ route('logo.update', $logo->id) }}" enctype="multipart/form-data">
+                          @csrf
+                          <div class="form-group">
+                            <label>Logo</label>
+                            <input name="logo" type="file" class="form-control"  value="{{ $logo->logo }}">
+                          </div>
+                          <img style="width: 50px;" src="{{ asset('uploads/logo') }}/{{ $logo->logo }}" alt="{{ $logo->logo }}">
+                          <br>
+                          <br>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                  </div>
+                </div>
+          </div>
+
+
+          
+          <div class="col-lg-4">
+            @if (session('still_focus'))
+            <div class="alert alert-success">{{ session('still_focus') }}</div>
+            @endif
+            <div class="card">
+                <div class="card-header">Update Still Focus</div>
+                <div class="card-body">
+                    <form method="POST" action="{{ route('still.focus.update', $focus->id) }}" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group">
+                          <label>Heading</label>
+                          <input name="heading" type="text" class="form-control"  value="{{ $focus->heading }}">
+                        </div>
+                        <div class="form-group">
+                          <label>Button One</label>
+                          <input name="btn_1" type="text" class="form-control"  value="{{ $focus->btn_1 }}">
+                        </div>
+                        <div class="form-group">
+                          <label>Button Two</label>
+                          <input name="btn_2" type="text" class="form-control"  value="{{ $focus->btn_2 }}">
+                        </div>
+                        <div class="form-group">
+                          <label>Button Three</label>
+                          <input name="btn_3" type="text" class="form-control"  value="{{ $focus->btn_3 }}">
+                        </div>
+                        <div class="form-group">
+                          <label>Background</label>
+                          <input name="bg" type="file" class="form-control">
+                        </div>
+                        <img style="width: 50px;" src="{{ asset('uploads/still_focus') }}/{{ $focus->bg }}" alt="{{ $focus->bg }}">
+                        <br>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                </div>
+              </div>
+        </div>
+
+      </div>
         <div class="row mb-5">
             <div class="col-lg-4">
                 @if (session('update_parts'))

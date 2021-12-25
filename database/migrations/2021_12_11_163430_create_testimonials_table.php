@@ -18,7 +18,7 @@ class CreateTestimonialsTable extends Migration
             $table->string('name');
             $table->string('designation');
             $table->string('review');
-            $table->string('thumbnail');
+            $table->string('thumbnail')->default('default.png');
             $table->timestamps();
         });
     }

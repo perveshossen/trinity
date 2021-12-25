@@ -67,7 +67,7 @@
                             @csrf
                             <div class="form-group">
                               <label>Social Icons class</label>
-                              <input name="icon" type="text" class="form-control"  placeholder="Enter email">
+                              <input name="icon" type="text" class="form-control"  placeholder="Enter icon class">
                             </div>
                             <div class="form-group">
                               <label>Social Media Link</label>

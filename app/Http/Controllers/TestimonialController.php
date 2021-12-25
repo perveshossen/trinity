@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Testimonial;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Image;
 
 class TestimonialController extends Controller
 {

@@ -2,9 +2,10 @@
 @section('shop')
     active
 @endsection
+@section('title')
+    Shop | TRINITY Official Website
+@endsection
 @section('frontend_content')
-    
-
     <!-- shop-banner start -->
     <section id="shop-banner">
         <div class="container">
@@ -26,66 +27,18 @@
                 </div>
             </div>
             <div class="row shop-slide">
+                @foreach ($categories as $category)
                 <div class="col-lg-3">
                     <div class="slide-item">
                         <a href="https://www.instagram.com/trinitydang/" target="_blank"><img
-                                src="{{ asset('frontend_asset') }}/images/shop/watches.jpg" alt=""></a>
+                                src="{{ asset('uploads/shop_category') }}/{{ $category->thumbnail }}" alt="{{ $category->thumbnail }}"></a>
                         <figcaption>
-                            <h3>Watches</h3>
-                            <a class="hover-btn" href="#">Shop</a>
+                            <h3>{{ $category->name }}</h3>
+                            <a class="hover-btn" href="{{ $category->button_link }}">Shop</a>
                         </figcaption>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img
-                                src="{{ asset('frontend_asset') }}/images/shop/shirts.jpg" alt=""></a>
-                        <figcaption>
-                            <h3>Shirts</h3>
-                            <a class="hover-btn" href="#">Shop</a>
-                        </figcaption>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img
-                                src="{{ asset('frontend_asset') }}/images/shop/mackup.jpg" alt=""></a>
-                        <figcaption>
-                            <h3>Mackup</h3>
-                            <a class="hover-btn" href="#">Shop</a>
-                        </figcaption>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img
-                                src="{{ asset('frontend_asset') }}/images/shop/pants.jpg" alt=""></a>
-                        <figcaption>
-                            <h3>Pants</h3>
-                            <a class="hover-btn" href="#">Shop</a>
-                        </figcaption>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img
-                                src="{{ asset('frontend_asset') }}/images/shop/shorts.jpg" alt=""></a>
-                        <figcaption>
-                            <h3>Shorts</h3>
-                            <a class="hover-btn" href="#">Shop</a>
-                        </figcaption>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/shop/shoe.jpg"
-                                alt=""></a>
-                        <figcaption>
-                            <h3>Shoes</h3>
-                            <a class="hover-btn" href="#">Shop</a>
-                        </figcaption>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <i class="fas fa-chevron-left right"></i>
             <i class="fas fa-chevron-right left"></i>
@@ -111,7 +64,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                     <div class="img-part">
-                        <img src="{{ asset('frontend_asset') }}/images/shop/1.jpg" alt="">
+                        <img src="{{ asset('frontend_asset') }}/images/shop/8.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
@@ -129,7 +82,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="img-part top-cut">
-                        <img src="{{ asset('frontend_asset') }}/images/shop/6.jpeg" alt="">
+                        <img src="{{ asset('frontend_asset') }}/images/shop/8.jpeg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 small-device">
@@ -190,44 +143,17 @@
                 </div>
             </div>
             <div class="row insta-slide">
+                @foreach ($movements as $movement)
                 <div class="col-lg-3">
                     <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/1.jpg"
-                                alt=""></a>
+                        <a href="{{ $movement->link }}" target="_blank"><img src="{{ asset('uploads/movement') }}/{{ $movement->photo }}"
+                                alt="{{ $movement->photo }}"></a>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/2.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/3.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/4.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/5.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/6.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
     <!-- insta-canvas ends -->
+
 @endsection

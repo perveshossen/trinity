@@ -79,6 +79,12 @@
             <span class="menu-item-label">Memoriae</span>
           </div><!-- menu-item -->
         </a><!-- sl-menu-link -->
+        <a href="{{ route('testimonial.index') }}" class="sl-menu-link @yield('testimonial')">
+          <div class="sl-menu-item">
+            <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
+            <span class="menu-item-label">Testimonial</span>
+          </div><!-- menu-item -->
+        </a><!-- sl-menu-link -->
         
         <label class="sidebar-label">Services Page</label>
         <a href="{{ route('banners.index') }}" class="sl-menu-link @yield('service_banner')">

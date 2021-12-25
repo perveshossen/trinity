@@ -1,3 +1,8 @@
+/* @font-face {
+    font-family:  'DM Serif Display', serif;
+    src: url("https://fonts.chanel.com/k/4557ee3c5c7e229667c02c3e802771f4feae8659-l.woff2")
+} */
+
 * {
     padding: 0;
     margin: 0;
@@ -34,6 +39,10 @@ h6 {
     margin-bottom: 0px;
 }
 
+h2 {
+    
+    letter-spacing: 4px;
+}
 
 html,
 body {
@@ -87,7 +96,7 @@ body {
 }
 
 .navbar {
-    height: 120px;
+    height: 125px;
     position: relative;
 }
 
@@ -421,7 +430,15 @@ video {
     position: absolute;
 }
 
-#banner-part h2 {
+#banner-part h1 {
+    color: #fff;
+    font-size: 130px;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 150px 0px;
+}
+
+/* #banner-part h2 {
     color: transparent;
     font-size: 130px;
     font-weight: 900;
@@ -433,32 +450,38 @@ video {
     background-position: 0 0;
     animation: back 20s linear infinite;
     z-index: 99;
-}
+} */
 
-@keyframes back {
+/* @keyframes back {
     100% {
         background-position: 2000px 0;
     }
-}
+} */
 
 /* banner-part ends */
 
-/* about-part start */
-#about-part {
+.main-div {
     height: 600px;
-    background-image: url(../images/history.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    overflow-y: auto;
+    perspective: 3px;
+    overflow-x: hidden;
 }
 
+.main-div::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* about-part start */
+
+
 #about-part h2 {
-    color: #000;
+    color: #fff;
     font-size: 45px;
     font-weight: 700;
     text-transform: uppercase;
-    padding: 200px 0px 40px;
+    padding: 225px 0px 40px;
+    
 }
 
 #about-part a {
@@ -482,65 +505,49 @@ video {
 
 /* about-part ends */
 
+
+
 /* publications-part start */
-#publications-part {
-    height: 600px;
-    background-image: url(../images/publish.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
+
 
 #publications-part h2 {
-    color: #fff;
+    color: #000;
     font-size: 45px;
     font-weight: 700;
     text-transform: uppercase;
-    padding: 200px 0px 40px;
+    padding: 225px 0px 40px;
+    
 }
 
 #publications-part a {
     padding: 15px 25px;
-    background-color: #fff;
-    color: #000;
+    background-color: #000;
+    color: #fff;
     font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
-    border-bottom: 2px solid #fff;
-    border: 1px solid #fff;
+    border-bottom: 2px solid #000;
+    border: 1px solid #000;
     position: relative;
     transition: all .3s ease;
 }
 
 #publications-part a:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
 }
 
 /* publications-part ends */
 
-
-
-
-
 /* project-part start */
-#project-part {
-    height: 600px;
-    background-image: url(../images/project.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
 
 #project-part h2 {
     color: #000;
     font-size: 45px;
     font-weight: 700;
     text-transform: uppercase;
-    padding: 200px 0px 40px;
-
+    padding: 225px 0px 40px;
+    
 }
 
 #project-part a {
@@ -565,21 +572,15 @@ video {
 /* project-part ends */
 
 /* service-part start */
-#service-part {
-    height: 600px;
-    background-image: url(../images/service.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
+
 
 #service-part h2 {
     color: #000;
     font-size: 45px;
     font-weight: 700;
     text-transform: uppercase;
-    padding: 200px 0px 40px;
+    padding: 225px 0px 40px;
+    
 }
 
 #service-part a {
@@ -603,21 +604,13 @@ video {
 /* service-part ends */
 
 /* initiative-part start */
-#initiative-part {
-    height: 600px;
-    background-image: url(../images/initiative.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
 #initiative-part h2 {
     color: #000;
     font-size: 45px;
     font-weight: 700;
     text-transform: uppercase;
-    padding: 200px 0px 40px;
+    padding: 205px 0px 40px;
+    
 }
 
 #initiative-part a {
@@ -643,21 +636,14 @@ video {
 /* initiative-part ends */
 
 /* travel-part start */
-#travel-part {
-    height: 600px;
-    background-image: url(../images/travel.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
 
 #travel-part h2 {
     color: #fff;
     font-size: 45px;
     font-weight: 700;
     text-transform: uppercase;
-    padding: 200px 0px 40px;
+    padding: 225px 0px 40px;
+    
 }
 
 #travel-part a {
@@ -682,22 +668,13 @@ video {
 
 
 /* shop-part start */
-#shop-part {
-    height: 600px;
-    background-image: url(../images/shop.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
 
 #shop-part h2 {
     color: #000;
     font-size: 45px;
     font-weight: 700;
     text-transform: uppercase;
-    padding: 200px 0px 40px;
-
+    padding: 225px 0px 40px;
 }
 
 #shop-part a {
@@ -721,21 +698,14 @@ video {
 /* shop-part ends */
 
 /* insider-part start */
-#insider-part {
-    height: 600px;
-    background-image: url(../images/insider.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
+
 
 #insider-part h2 {
     color: #ffff;
     font-size: 45px;
     font-weight: 700;
     text-transform: uppercase;
-    padding: 200px 0px 40px;
+    padding: 225px 0px 40px;
 }
 
 #insider-part a {
@@ -767,10 +737,10 @@ video {
 
 #video-part h2 {
     color: #000;
-    font-size: 50px;
+    font-size: 48px;
     font-weight: 700;
-    padding: 55px 5px 25px 25px;
-    letter-spacing: 2px;
+    padding: 5px 5px 25px 25px;
+    letter-spacing: 4px;
     line-height: 70px;
 }
 
@@ -780,7 +750,7 @@ video {
     font-weight: 600;
     line-height: 27px;
     word-spacing: 3px;
-    padding: 0px 60px 0px 25px;
+    padding: 0px 23px 0px 25px;
 }
 
 #video-part img {
@@ -841,10 +811,11 @@ video {
 }
 
 #mail-part h2 {
-    color: #ffff;
-    font-size: 45px;
+    color: rgb(255, 255, 255);
+    font-size: 50px;
     font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 4px;
     padding: 150px 0px 50px;
 }
 
@@ -863,7 +834,7 @@ video {
     display: inline-block;
 }
 
-#mail-part a {
+#mail-part button {
     padding: 15px 25px;
     background-color: #000;
     color: #fff;
@@ -874,9 +845,10 @@ video {
     border: 1px solid #000;
     position: relative;
     transition: all .3s ease;
+    cursor: pointer;
 }
 
-#mail-part a:hover {
+#mail-part button:hover {
     background-color: #fff;
     color: #000;
 }
@@ -892,13 +864,12 @@ video {
     z-index: 1;
 }
 
-
 #insta-canvas h2 {
     color: #fff;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 700;
     padding: 0px 0px 25px 0px;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
 }
 
 #insta-canvas p {
@@ -1178,7 +1149,7 @@ video {
 
 #footer-part h4 {
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     padding-bottom: 20px;
     text-transform: uppercase;
@@ -1202,11 +1173,6 @@ video {
 /* publication page starts */
 #publication-banner {
     height: 100vh;
-    background-image: url(../images/books-gc38483214_1920.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     position: relative;
 }
 
@@ -1866,8 +1832,8 @@ video {
 }
 
 #history-body .year-details #year-two .image-one {
-    height: 320px;
-    width: 460px;
+    height: 500px;
+    width: 350px;
 }
 
 #history-body .year-details #year-two .image-two {
@@ -1889,12 +1855,9 @@ video {
 }
 
 
-#history-body .year-details #year-two h2 {
-    top: 36%;
-}
+#history-body .year-details #year-two h2 {}
 
 #history-body .year-details #year-two a {
-    top: 39%;
     color: #fff;
 }
 
@@ -1938,6 +1901,32 @@ video {
 
 #history-body .year-details #year-three a {
     top: 46%;
+    color: #fff;
+}
+
+#history-body .year-details #year-four .image-one {
+    height: 500px;
+    margin-left: 100px;
+}
+
+#history-body .year-details #year-four .image-two {
+    height: 300px;
+    width: 400px;
+    margin-top: -50px;
+}
+
+#history-body .year-details #year-four .image-three {
+    margin: 10px 117px;
+    height: 300px;
+    width: 400px;
+}
+
+#history-body .year-details #year-four h2 {
+    top: 17%;
+}
+
+#history-body .year-details #year-four a {
+    top: 25%;
     color: #fff;
 }
 
@@ -2087,10 +2076,7 @@ video {
  ********************************/
 /* still-banner start */
 #still-banner {
-    background-image: url(../images/still-banner.jpeg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    height: 550px;
 }
 
 #still-banner h2 {
@@ -2104,14 +2090,7 @@ video {
 /* still-banner ends */
 
 /* still-details-banner start */
-#still-details-banner {
-    background-image: url(../images/still-details-banner.jpeg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    padding-bottom: 150px;
-}
+
 
 #still-details-banner h4 {
     color: #fff;
@@ -2143,22 +2122,21 @@ video {
 /* still-details-banner ends */
 
 /* still-offering start */
-#still-offering {
-    background-image: url(../images/still-2.jpeg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding-bottom: 150px;
-    background-attachment: fixed;
-}
 
 #still-offering h4 {
-    color: #fff;
+    color: #000;
     font-size: 28px;
     font-weight: 600;
     text-transform: uppercase;
-    padding: 200px 0px 40px;
+    padding: 220px 0px 20px;
 
+}
+
+#still-offering p {
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+    padding: 0px 0px 10px;
 }
 
 #still-offering a {
@@ -2180,8 +2158,113 @@ video {
     color: #000;
 }
 
+#still-offering h5 {
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0px 0px 20px;
+
+}
+
 /* still-offering ends */
 
+/* still-offering-enjoy start */
+
+
+#still-offering-enjoy h4 {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 220px 0px 20px;
+
+}
+
+#still-offering-enjoy h5 {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0px 0px 20px;
+
+}
+
+#still-offering-enjoy p {
+    font-size: 13px;
+    color: #000;
+    font-weight: 500;
+    padding: 0px 0px 0px;
+}
+
+#still-offering-enjoy a {
+    padding: 15px 25px;
+    background-color: #000;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 2px solid #fff;
+    border: 1px solid #000;
+    position: relative;
+    transition: all .3s ease;
+    display: inline-block;
+}
+
+#still-offering-enjoy a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* still-offering ends */
+
+
+/* still-offering-two start */
+
+#still-offering-two h4 {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 180px 0px 20px;
+
+}
+#still-offering-two h5 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0px 0px 20px;
+
+}
+
+#still-offering-two p {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    padding: 0px 0px 10px;
+}
+
+#still-offering-two a {
+    padding: 15px 25px;
+    background-color: #000;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 2px solid #fff;
+    border: 1px solid #000;
+    position: relative;
+    transition: all .3s ease;
+    display: inline-block;
+}
+
+#still-offering-two a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* still-offering ends */
 
 /* join-community  start */
 #join-community {
@@ -2236,7 +2319,7 @@ video {
 }
 
 
-#join-community a {
+#join-community button {
     padding: 12px 25px;
     background-color: #fff;
     color: #000;
@@ -2246,9 +2329,10 @@ video {
     border-bottom: 2px solid #000;
     position: relative;
     transition: all .3s ease;
+    cursor: pointer;
 }
 
-#join-community a::after {
+#join-community button::after {
     content: " ";
     position: absolute;
     height: 1px;
@@ -2267,20 +2351,13 @@ video {
 /* #join-community ends */
 
 /* still-to-date start */
-#still-to-date {
-    background-image: url(../images/still-to-date.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding-bottom: 150px;
-}
 
 #still-to-date h4 {
     color: #000;
     font-size: 28px;
     font-weight: 600;
     text-transform: uppercase;
-    padding: 200px 0px 40px;
+    padding: 225px 0px 40px;
 
 }
 
@@ -2316,11 +2393,7 @@ video {
  ********************************/
 /* shop-banner start */
 #service-banner {
-    background-image: url(../images/service-banner.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    height: 550px;
 }
 
 #service-banner h2 {
@@ -2369,7 +2442,6 @@ video {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     position: relative;
     height: 600px;
 }
@@ -2413,15 +2485,6 @@ video {
 /* elevate ends */
 
 /* mindful start */
-#mindful {
-    background-image: url(../images/service-03.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: relative;
-    height: 600px;
-}
 
 
 #mindful h2 {
@@ -2429,7 +2492,7 @@ video {
     font-size: 45px;
     font-weight: 700;
     text-transform: uppercase;
-    padding: 200px 0px 40px;
+    padding: 180px 0px 40px;
 }
 
 #mindful a {
@@ -2459,7 +2522,6 @@ video {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     position: relative;
     height: 600px;
 }
@@ -2502,23 +2564,14 @@ video {
 
 
 /* self-help start */
-#self-help {
-    background-image: url(../images/service-05.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: relative;
-    height: 600px;
-}
 
 
 #self-help h2 {
-    color: #000;
+    color: #fff;
     font-size: 45px;
     font-weight: 700;
     text-transform: uppercase;
-    padding: 200px 0px 40px;
+    padding: 225px 0px 40px;
 }
 
 #self-help a {
@@ -2547,7 +2600,6 @@ video {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     position: relative;
     height: 600px;
 }
@@ -2590,23 +2642,13 @@ video {
 
 
 /* mindful-essentials start */
-#mindful-essentials {
-    background-image: url(../images/service-08.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: relative;
-    height: 600px;
-}
-
 
 #mindful-essentials h2 {
     color: #000;
     font-size: 45px;
     font-weight: 700;
     text-transform: uppercase;
-    padding: 200px 0px 40px;
+    padding: 225px 0px 40px;
 }
 
 #mindful-essentials a {
@@ -2643,7 +2685,6 @@ video {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 #mentee-banner h2 {
@@ -2734,7 +2775,6 @@ video {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 #shop-banner h2 {
@@ -2747,49 +2787,6 @@ video {
 
 /* shop-banner ends */
 
-
-/* shop-part start */
-#shop-part {
-    padding-top: 60px;
-    padding-bottom: 60px;
-}
-
-#shop-part img {
-    width: 100%;
-}
-
-#shop-part .top-cut {
-    margin-top: -150px;
-}
-
-#shop-part .text-part h5 {
-    font-size: 25px;
-    color: #000;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding-bottom: 25px;
-    padding-top: 200px;
-}
-
-#shop-part .text-part a {
-    padding: 15px 25px;
-    background-color: #fff;
-    color: #000;
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
-    border-bottom: 2px solid #fff;
-    border: 1px solid #000;
-    position: relative;
-    transition: all .3s ease;
-}
-
-#shop-part .text-part a:hover {
-    background-color: #000;
-    color: #ffff;
-}
-
-/* shop-part ends */
 
 
 
@@ -2819,13 +2816,6 @@ video {
 /* insider-banner ends */
 
 /* insider-description start */
-#insider-description {
-    background-image: url(../images/insider-description.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
 
 #insider-description p {
     color: #000;
@@ -2959,7 +2949,6 @@ video {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 #gateway-banner h2 {
@@ -2999,21 +2988,30 @@ video {
 
 /* apply-now start */
 #apply-now .first-part {
-    background-image: url(../images/initiative.jpg);
+    background-image: url(../images/gateway/gateway-03.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     padding-bottom: 150px;
     margin-right: -15px;
+    height: 500px;
 }
 
 #apply-now .first-part h4 {
-    color: #000;
-    font-size: 28px;
-    font-weight: 600;
+    color: #fff;
+    font-size: 38px;
+    font-weight: 700;
     text-transform: uppercase;
-    padding: 200px 0px 40px;
+    padding: 200px 0px 20px;
+}
 
+
+
+#apply-now .first-part p {
+    font-size: 13px;
+    color: #fff;
+    font-weight: 500;
+    padding: 0px 0px 0px;
 }
 
 #apply-now .first-part a {
@@ -3037,21 +3035,29 @@ video {
 
 
 #apply-now .second-part {
-    background-image: url(../images/slider-3.jpg);
+    background-image: url(../images/gateway/gateway-036.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     padding-bottom: 150px;
     margin-left: -15px;
+    height: 500px;
 }
 
 #apply-now .second-part h4 {
     color: #fff;
-    font-size: 28px;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0px 0px 20px;
+
+}
+#apply-now .second-part h5 {
+    color: #fff;
+    font-size: 26px;
     font-weight: 600;
     text-transform: uppercase;
-    padding: 200px 0px 40px;
-
+    padding: 180px 0px 10px;
 }
 
 #apply-now .second-part a {
@@ -3089,7 +3095,6 @@ video {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 #contact-banner h2 {
@@ -3256,7 +3261,7 @@ figure.snip1104.hover:before {
 }
 
 
-#mail-part-contact a {
+#mail-part-contact button {
     padding: 15px 25px;
     background-color: #fff;
     color: #000;
@@ -3268,9 +3273,10 @@ figure.snip1104.hover:before {
     position: relative;
     transition: all .3s ease;
     display: inline-block;
+    cursor: pointer;
 }
 
-#mail-part-contact a:hover {
+#mail-part-contact button:hover {
     background-color: #000;
     color: #fff;
 }

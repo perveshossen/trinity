@@ -119,10 +119,6 @@ $(function () {
 
 
 
-    // wow js
-    new WOW().init();
-
-
 
 
     /* Demo purposes only */
@@ -134,4 +130,10 @@ $(function () {
 
 
 
+});
+
+//also at the window load event
+$(window).on('load', function () {
+
+    new WOW().init();
 });

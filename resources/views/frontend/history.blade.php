@@ -1,58 +1,28 @@
 @extends('layouts.frontend_app')
+@section('title')
+    History | TRINITY Official Website
+@endsection
 @section('history')
     active
 @endsection
 @section('frontend_content')
-    
+
+
+
     <!-- history-banner start -->
     <section id="history-banner">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 m-auto text-center">
-                    <img src="{{ asset('frontend_asset') }}/images/admin.jpg" alt="">
+                    <img src="{{ asset('uploads/history_banner') }}/{{ $his_banner->photo }}" alt="">
                 </div>
             </div>
             <div class="row lower-parts">
                 <div class="col-lg-7 m-auto text-center">
-                    <h3>
-                        “AM SO BLESSED TO HAVE LEARNED SO MUCH,
-                        YET THERE IS SO MUCH MORE I ASPIRE TO GROW.”
-                    </h3>
+                    <h3>{{ $his_banner->heading }}</h3>
                     <p><i>-TRINITY DANG 2021</i></p>
 
-                    <p class="main-description">Amongst many things, Trinity Dang is a self made
-                        model, entrepreneur, author, and international
-                        television host. Growing up in almost every part of
-                        the world, Trinity has embodied a deep spirit of
-                        culture, curiosity, and particularly, an extremely unique
-                        perspective. As a young adult, Trinity lived in over 6
-                        different countries and traveled to over 100 different
-                        cities. Studying under some of the world’s most
-                        successful entrepreneurs, Trinity was integrated in
-                        building over a dozen start up companies. Online,
-                        she is a social phenomenon seen in commercials,
-                        magazines, and television series across the globe.
-                        Offline, Trinity is the co-founder of Mission Strategy:
-                        MSTRAT, a strategic consulting and production
-                        company where she consults, strategizes, recreates,
-                        and helps in building businesses from start to finish.
-                        She published Her Memoriae, a poetry, prose, and
-                        photo book sharing some of the most intimate
-                        thoughts from her personal journal, hoping to model
-                        transparency, vulnerability, and strength in courage,
-                        inspiring this younger generation everywhere. She is
-                        also the founder and CEO of The Still Project, a
-                        platform that brings global awareness to mental
-                        health and mindful living.
-                        Trinity is a full time humanitarian, mental health
-                        advocate, and holistic health activist. Serving to
-                        bridge the gap between East and West -- Trinity is a
-                        voice for this generation, a beacon of love, hope, and
-                        light, fighting to break through the stigmatism
-                        surrounding mental health. Today, she aspires to
-                        continue sharing her story and investing in serving
-                        others, as well as building platforms that help support
-                        individuals along their own personal journeys.</p>
+                    <p class="main-description">{{ $his_banner->description }}</p>
                 </div>
             </div>
         </div>
@@ -103,62 +73,32 @@
             <div class="year-details">
                 <div class="row common-year-space" id="year-one">
                     <div class="col-lg-5 col-md-5 m-auto text-center">
-                        <img class="image-one" src="{{ asset('frontend_asset') }}/images/history/01.jpg" alt="">
+                        <img class="image-one" src="{{ asset('frontend_asset') }}/images/history/1991.jpeg" alt="">
                         <h2>1991</h2>
                         <a href="{{ route('history.details') }}">DISCOVER<i class="fas fa-chevron-right"></i></a>
                     </div>
                 </div>
                 <div class="row common-year-space" id="year-two">
                     <div class="col-lg-7 col-7 ">
-                        <img class="image-one" src="{{ asset('frontend_asset') }}/images/history/2.jpg" alt="">
-                        <img class="image-three" src="{{ asset('frontend_asset') }}/images/history/4.jpg" alt="">
+                        <img class="image-one" src="{{ asset('frontend_asset') }}/images/history/1920-01.jpeg" alt="">
 
                     </div>
                     <div class="col-lg-5 col-5">
-                        <img class="image-two" src="{{ asset('frontend_asset') }}/images/history/3.jpg" alt="">
-                        <img class="image-four" src="{{ asset('frontend_asset') }}/images/history/5.jpg" alt="">
+                        <img class="image-two" src="{{ asset('frontend_asset') }}/images/history/1920-02.jpeg" alt="">
                     </div>
-                    <h2>2000</h2>
-                    <a href="{{ route('history.details') }}">DISCOVER<i class="fas fa-chevron-right"></i></a>
+                    <h2>1920</h2>
+                    <a href="#">DISCOVER<i class="fas fa-chevron-right"></i></a>
                 </div>
-                <div class="row common-year-space" id="year-three">
-                    <div class="col-lg-5 col-md-5 col-5">
-                        <img class="image-one" src="{{ asset('frontend_asset') }}/images/history/6.jpg" alt="">
-                        <img class="image-three" src="{{ asset('frontend_asset') }}/images/history/8.jpg" alt="">
+                <div class="row common-year-space" id="year-four">
+                    <div class="col-lg-4 col-4">
+                        <img class="image-one" src="{{ asset('frontend_asset') }}/images/history/2010-01.jpeg" alt="">
                     </div>
-                    <div class="col-lg-7 col-md-7 col-7">
-                        <img class="image-two" src="{{ asset('frontend_asset') }}/images/history/7.jpg" alt="">
-                        <img class="image-four" src="{{ asset('frontend_asset') }}/images/history/10.jpg" alt="">
-                        <img class="image-five" src="{{ asset('frontend_asset') }}/images/history/11.jpg" alt="">
+                    <div class="col-lg-7 col-7">
+                        <img class="image-two" src="{{ asset('frontend_asset') }}/images/history/2010-02.jpeg" alt="">
+                        <img class="image-three" src="{{ asset('frontend_asset') }}/images/history/2010-03.jpeg" alt="">
                     </div>
-                    <h2>2001</h2>
-                    <a href="{{ route('history.details') }}">DISCOVER<i class="fas fa-chevron-right"></i></a>
-                </div>
-                <div class="row common-year-space" id="year-two">
-                    <div class="col-lg-7 col-md-7 col-7 text-right">
-                        <img class="image-one" src="{{ asset('frontend_asset') }}/images/history/2.jpg" alt="">
-                        <img class="image-three" src="{{ asset('frontend_asset') }}/images/history/4.jpg" alt="">
-
-                    </div>
-                    <div class="col-lg-5 col-md-5 col-5">
-                        <img class="image-two" src="{{ asset('frontend_asset') }}/images/history/3.jpg" alt="">
-                        <img class="image-four" src="{{ asset('frontend_asset') }}/images/history/5.jpg" alt="">
-                    </div>
-                    <h2>2002</h2>
-                    <a href="{{ route('history.details') }}">DISCOVER<i class="fas fa-chevron-right"></i></a>
-                </div>
-                <div class="row common-year-space" id="year-three">
-                    <div class="col-lg-5 col-md-5 col-5 text-right">
-                        <img class="image-one" src="{{ asset('frontend_asset') }}/images/history/6.jpg" alt="">
-                        <img class="image-three" src="{{ asset('frontend_asset') }}/images/history/8.jpg" alt="">
-                    </div>
-                    <div class="col-lg-7 col-md-7 col-7">
-                        <img class="image-two" src="{{ asset('frontend_asset') }}/images/history/7.jpg" alt="">
-                        <img class="image-four" src="{{ asset('frontend_asset') }}/images/history/10.jpg" alt="">
-                        <img class="image-five" src="{{ asset('frontend_asset') }}/images/history/11.jpg" alt="">
-                    </div>
-                    <h2>2003</h2>
-                    <a href="{{ route('history.details') }}">DISCOVER<i class="fas fa-chevron-right"></i></a>
+                    <h2>2010</h2>
+                    <a href="#">DISCOVER<i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
         </div>
@@ -186,42 +126,14 @@
                 </div>
             </div>
             <div class="row insta-slide">
+                @foreach ($movements as $movement)
                 <div class="col-lg-3">
                     <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/1.jpg"
-                                alt=""></a>
+                        <a href="{{ $movement->link }}" target="_blank"><img src="{{ asset('uploads/movement') }}/{{ $movement->photo }}"
+                                alt="{{ $movement->photo }}"></a>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/2.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/3.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/4.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/5.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/6.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

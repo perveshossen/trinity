@@ -2,8 +2,10 @@
 @section('insider')
     active
 @endsection
+@section('title')
+    Insider | TRINITY Official Website
+@endsection
 @section('frontend_content')
-  
 
     <!-- insider-banner start -->
     <section id="insider-banner">
@@ -19,16 +21,19 @@
 
     <!-- insider-description start -->
     <section id="insider-description">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 text-center m-auto">
-                    <p>“A Collection Of
-                        Words, Videos, And Experiences For A Deeper
-                        Look Into Trinity’s Thoughts And Introspection.
-                        Understand Her Insight, Intentions, And
-                        Perception. Experience More Of Trinity’s
-                        Personal Journey Through Trinity Talks: The
-                        Insider.”</p>
+        <div class="jarallax">
+            <img class="jarallax-img" src="{{ asset('frontend_asset') }}/images/insider-description.jpg" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 text-center m-auto">
+                        <p>“A Collection Of
+                            Words, Videos, And Experiences For A Deeper
+                            Look Into Trinity's Thoughts And Introspection.
+                            Understand Her Insight, Intentions, And
+                            Perception. Experience More Of Trinity's
+                            Personal Journey Through Trinity Talks: The
+                            Insider.”</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -42,132 +47,66 @@
             <div class="row">
                 <div class="first-part">
                     <div class="col-lg-6 col-md-6 m-auto text-center">
-                        <img src="{{ asset('frontend_asset') }}/images/insider-01.jpeg" alt="">
+                        <img src="{{ asset('frontend_asset') }}/images/insider-08.jpeg" alt="">
                         <h2>INSIDER</h2>
                         <a href="#">Discover</a>
                     </div>
                 </div>
             </div>
             <div class="row insider-details">
+                @foreach ($insiders as $insider)
+                @php
+                $width_round = round($loop->index/2);
+                $width_out_round = $loop->index/2;
+                @endphp
+                @if ($width_out_round == $width_round)
+                @php
+                $display = 'left';
+                @endphp
+                @else   
+                @php 
+                $display = 'right';
+                @endphp
+                @endif
+                @if ($display === 'left')
                 <div class="col-lg-6 col-md-6">
                     <div class="img-part">
-                        <img src="{{ asset('frontend_asset') }}/images/insider-02.jpeg" alt="">
+                        <img src="{{ asset('uploads/insider') }}/{{ $insider->thumbnail }}" alt="{{ $insider->thumbnail }}">
                     </div>
                 </div>
+                @endif
                 <div class="col-lg-6 col-md-6">
                     <div class="text-part ">
-                        <h5>Trinity High-quality Jewelry things available</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.Lorem ipsum
-                            dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.</p>
-                        <h6><a href="#">Explore</a></h6>
+                        <h5>{{ $insider->heading }}</h5>
+                        <p>{{ $insider->description }}</p>
+                        <h6><a href="{{ $insider->button_link }}">Explore</a></h6>
                     </div>
                 </div>
-
-
-                <div class="col-lg-6 col-md-6 large-device">
-                    <div class="text-part">
-                        <h5>Trinity High-quality Jewelry things available</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.Lorem ipsum
-                            dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.</p>
-                        <h6><a href="#">Explore</a></h6>
-                    </div>
-                </div>
+                @if ($display === 'right')
                 <div class="col-lg-6 col-md-6">
                     <div class="img-part top-cut">
-                        <img src="{{ asset('frontend_asset') }}/images/insider-03.jpeg" alt="">
+                        <img src="{{ asset('uploads/insider') }}/{{ $insider->thumbnail }}" alt="{{ $insider->thumbnail }}">
                     </div>
                 </div>
+                    
+                @endif
                 <div class="col-lg-6 col-md-6 small-device">
                     <div class="text-part">
-                        <h5>Trinity High-quality Jewelry things available</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.Lorem ipsum
-                            dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.</p>
-                        <h6><a href="#">Explore</a></h6>
+                        <h5>{{ $insider->heading }}</h5>
+                        <p>{{ $insider->description }}</p>
+                        <h6><a href="{{ $insider->button_link }}">Explore</a></h6>
                     </div>
                 </div>
+                @endforeach
 
-
-                <div class="col-lg-6 col-md-6">
-                    <div class="img-part top-cut">
-                        <img src="{{ asset('frontend_asset') }}/images/insider-04.jpeg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="text-part">
-                        <h5>Trinity High-quality Jewelry things available</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.Lorem ipsum
-                            dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.</p>
-                        <h6><a href="#">Explore</a></h6>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-6 col-md-6 large-device">
-                    <div class="text-part ">
-                        <h5>Trinity High-quality Jewelry things available</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.Lorem ipsum
-                            dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.</p>
-                        <h6><a href="#">Explore</a></h6>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="img-part top-cut">
-                        <img src="{{ asset('frontend_asset') }}/images/insider-05.jpeg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 small-device">
-                    <div class="text-part ">
-                        <h5>Trinity High-quality Jewelry things available</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.Lorem ipsum
-                            dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.</p>
-                        <h6><a href="#">Explore</a></h6>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-6 col-md-6">
-                    <div class="img-part top-cut">
-                        <img src="{{ asset('frontend_asset') }}/images/insider-07.jpeg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="text-part ">
-                        <h5>Trinity High-quality Jewelry things available</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.Lorem ipsum
-                            dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.</p>
-                        <h6><a href="#">Explore</a></h6>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-6 col-md-6 large-device">
-                    <div class="text-part ">
-                        <h5>Trinity High-quality Jewelry things available</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.Lorem ipsum
-                            dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.</p>
-                        <h6><a href="#">Explore</a></h6>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="img-part top-cut">
-                        <img src="{{ asset('frontend_asset') }}/images/insider-08.jpeg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 small-device">
-                    <div class="text-part" id="text-last-part">
-                        <h5>Trinity High-quality Jewelry things available</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.Lorem ipsum
-                            dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.</p>
-                        <h6><a href="#">Explore</a></h6>
-                    </div>
-                </div>
             </div>
 
             <div class="row">
-                <div class="last-part">
-                    <div class="col-lg-6 col-md-6 m-auto text-center">
+
+                <div class="col-lg-6 col-md-6 m-auto text-center">
+                    <div class="last-part">
                         <h2>The 55.55 Point </h2>
-                        <img src="{{ asset('frontend_asset') }}/images/insider-06.jpeg" alt="">
+                        <img src="{{ asset('frontend_asset') }}/images/box-three.jpeg" alt="">
                     </div>
                 </div>
             </div>
@@ -181,14 +120,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-md-5">
-                    <h2>Welcome to Trinity Video Presentation</h2>
-                    <p>Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius, qui sequitur
-                        mutationem consuetudium.</p>
+                    <h2>{{ $video->heading }}</h2>
+                    <p>{{ $video->description }}</p>
                 </div>
                 <div class="col-lg-7 col-md-7">
                     <div class="video-head">
                         <a class="venobox" data-autoplay="true" data-vbtype="video"
-                            href="https://www.youtube.com/watch?v=JaUCiKTNBxQ"><i class="fas fa-play"></i></a>
+                            href="{{ $video->video_link }}"><i class="fas fa-play"></i></a>
                         <img src="{{ asset('frontend_asset') }}/images/video.jpg" alt="">
                     </div>
                 </div>
@@ -210,42 +148,14 @@
                 </div>
             </div>
             <div class="row insta-slide">
+                @foreach ($movements as $movement)
                 <div class="col-lg-3">
                     <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/1.jpg"
-                                alt=""></a>
+                        <a href="{{ $movement->link }}" target="_blank"><img src="{{ asset('uploads/movement') }}/{{ $movement->photo }}"
+                                alt="{{ $movement->photo }}"></a>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/2.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/3.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/4.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/5.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/6.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

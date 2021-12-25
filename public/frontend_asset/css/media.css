@@ -36,7 +36,7 @@
         height: 700px;
     }
 
-    #banner-part h2 {
+    #banner-part h1 {
         text-align: center;
         font-size: 70px;
         padding: 300px 0px;
@@ -239,6 +239,7 @@
     #meet h4 {
         padding: 0px 0px 30px;
     }
+
     #meet li {
         font-size: 14px;
     }
@@ -275,7 +276,7 @@
         height: 700px;
     }
 
-    #banner-part h2 {
+    #banner-part h1 {
         text-align: center;
         font-size: 70px;
         padding: 300px 0px;
@@ -799,7 +800,7 @@
         height: 700px;
     }
 
-    #banner-part h2 {
+    #banner-part h1 {
         text-align: center;
         font-size: 70px;
         padding: 300px 0px;
@@ -834,6 +835,7 @@
     #shop-part h2,
     #insider-part h2 {
         font-size: 35px;
+        padding: 185px 0px 40px;
     }
 
     #video-part {
@@ -846,6 +848,11 @@
         padding: 0;
         text-align: center;
         padding: 0px 10px 20px;
+    }
+
+    #video-part p {
+        padding: 0px 23px 20px 25px;
+        text-align: center;
     }
 
     #mail-part {
@@ -872,15 +879,15 @@
     }
 
     #info-part .second-part i {
-        right: 140px;
+        right: 45px;
     }
 
     #info-part .third-part h6 {
-        right: 140px;
+        right: 50px;
     }
 
     #info-part .third-part i {
-        right: 130px;
+        right: 40px;
     }
 
     /* publication page  start */
@@ -926,18 +933,22 @@
         left: 40%;
     }
 
-    #shop .slide-item figcaption {
+    /* #shop .slide-item figcaption {
         position: absolute;
         top: calc(90%);
         width: 100%;
         background-color: #fff;
         padding: 15px 25px 65px;
-    }
+    } */
 
+    #shop .slide-item figcaption {
+        position: absolute;
+        top: calc(90%);
+    }
 
     #shop .slide-item:hover figcaption,
     #shop .slide-item.hover figcaption {
-        top: 430px;
+        top: 310px;
     }
 
     #picture-part .text-part {
@@ -1088,8 +1099,8 @@
     }
 
     #insider-description p {
-        font-size: 16px;
-        padding: 100px 0px;
+        font-size: 20px;
+        padding: 140px 0px 0px;
     }
 
     #blogging-media .text-part {
@@ -1146,6 +1157,7 @@
 
     #mail-part-contact input {
         width: 360px;
+        margin-bottom: 10px;
     }
 
     #mail-part input {
@@ -1153,6 +1165,10 @@
     }
 
     #still-offering a {
+        margin-bottom: 10px;
+    }
+
+    #still-offering-two a {
         margin-bottom: 10px;
     }
 
@@ -1347,6 +1363,29 @@
         bottom: 10px;
     }
 
+    #history-body .year-details #year-four .image-one {
+        height: 164px;
+        width: 150px;
+        margin-left: 0px;
+    }
+
+    #history-body .year-details #year-four .image-two {
+        height: 171px;
+        width: 185px;
+        margin-top: 0px;
+        margin-right: -24px;
+    }
+
+    #history-body .year-details #year-four .image-three {
+        height: 180px;
+        width: 177px;
+        margin: 10px 0px;
+    }
+
+    #history-body .year-details #year-four h2 {
+        top: 27%;
+    }
+
     #mentee-banner h2 {
         font-size: 35px;
     }
@@ -1370,12 +1409,9 @@
 
     #mail-part input {
         width: 360px;
-        margin-bottom: 20px;
+        margin-bottom: 5px;
     }
 
-    #mail-part {
-        height: 350px;
-    }
 
     #testimonials-part {
         height: 650px;

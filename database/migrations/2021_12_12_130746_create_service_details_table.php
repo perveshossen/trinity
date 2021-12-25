@@ -15,7 +15,7 @@ class CreateServiceDetailsTable extends Migration
     {
         Schema::create('service_details', function (Blueprint $table) {
             $table->id();
-            $table->string('description');
+            $table->longText('description');
             $table->string('thumbnail')->default('default.png');
             $table->timestamps();
         });
