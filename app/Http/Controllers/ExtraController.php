@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Getaway_video;
+use App\Getway_slider;
 use App\Histroy_banner;
 use App\Home_video;
 use App\Interview_story;
@@ -13,6 +15,7 @@ use App\Shop_banner;
 use App\Still_banner;
 use App\Still_banner_two;
 use App\Still_focus;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Image;
 
@@ -32,11 +35,27 @@ class ExtraController extends Controller
             'shop_banner' => Shop_banner::find(1),
             'logo' => Logo::find(1),
             'focus' => Still_focus::find(1),
+            'gateway_video' => Getaway_video::find(1)
         ]);
     }
     public function homepresentationpost(Request $request, $id){
-        home_video::find($id)->update($request->except('_token'));
-        return back()->with('update_video', 'Presentation updated successfully');
+        Home_video::find($id)->update($request->except('_token', 'video_thumbnail'));
+        if ($request->hasFile('video_thumbnail')) {
+            if(Home_video::find(1)->video_thumbnail != 'default.png'){
+               $old_photo_location = 'public/uploads/home_video/'.Home_video::find(1)->video_thumbnail;
+                unlink(base_path($old_photo_location));
+            }
+            $uploaded_photo = $request->file('video_thumbnail');
+            $new_photo_name = $id.".".$uploaded_photo->getClientOriginalExtension();
+            $new_photo_location = 'public/uploads/home_video/'.$new_photo_name;
+           Image::make($uploaded_photo)->save(base_path($new_photo_location));
+           Home_video::find(1)->update([
+              'video_thumbnail' =>  $new_photo_name,
+           ]);
+           return back()->with('update_video', 'Updated successfully!');
+        } else {
+            return back()->withErrors('No file was uploaded');
+        }
     }
     public function bannerdetailpost(Request $request, $id){
         Histroy_banner::find($id)->update($request->except('_token', 'photo'));
@@ -226,6 +245,28 @@ class ExtraController extends Controller
               'bg' =>  $new_photo_name,
            ]);
            return back()->with('still_focus', 'Updated successfully!');
+        } else {
+            return back()->withErrors('No file was uploaded');
+        }
+    }
+    public function getwayvideoupdate(Request $request, $id){
+        Getaway_video::find($id)->update($request->except('_token', 'video_thumbnail') + [
+            'created_at' => Carbon::now()
+        ]);
+        
+        if ($request->hasFile('video_thumbnail')) {
+            if(Getaway_video::find(1)->video_thumbnail != 'default.png'){
+               $old_photo_location = 'public/uploads/gateway_video/'.Getaway_video::find(1)->video_thumbnail;
+                unlink(base_path($old_photo_location));
+            }
+            $uploaded_photo = $request->file('video_thumbnail');
+            $new_photo_name = $id.".".$uploaded_photo->getClientOriginalExtension();
+            $new_photo_location = 'public/uploads/gateway_video/'.$new_photo_name;
+           Image::make($uploaded_photo)->save(base_path($new_photo_location));
+           Getaway_video::find(1)->update([
+              'gateway_video' =>  $new_photo_name,
+           ]);
+           return back()->with('gateway_video', 'Updated successfully!');
         } else {
             return back()->withErrors('No file was uploaded');
         }

@@ -168,7 +168,7 @@
                     <div class="video-head">
                         <a class="venobox" data-autoplay="true" data-vbtype="video"
                             href="{{ $presentation->video_link }}"><i class="fas fa-play"></i></a>
-                        <img src="{{ asset('frontend_asset') }}/images/video.jpg" alt="">
+                        <img src="{{ asset('uploads/home_video') }}/{{ $presentation->video_thumbnail }}" alt="{{ $presentation->video_thumbnail }}">
                     </div>
                 </div>
             </div>

@@ -75,15 +75,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-md-5">
-                    <h2>STILL GETAWAY PROMO VIDEO</h2>
-                    <p>Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius, qui sequitur
-                        mutationem consuetudium.</p>
+                    <h2>{{ $gateway_video->heading }}</h2>
+                    <p>{{ $gateway_video->description }}</p>
                 </div>
                 <div class="col-lg-7 col-md-7">
                     <div class="video-head">
                         <a class="venobox" data-autoplay="true" data-vbtype="video"
-                            href="https://www.youtube.com/watch?v=JaUCiKTNBxQ"><i class="fas fa-play"></i></a>
-                        <img src="{{ asset('frontend_asset') }}/images/video.jpg" alt="">
+                            href="{{ $gateway_video->video_link  }}"><i class="fas fa-play"></i></a>
+                        <img src="{{ asset('uploads/gateway_video') }}/{{ $gateway_video->video_thumbnail }}" alt="{{ $gateway_video->video_thumbnail}}">
                     </div>
                 </div>
             </div>

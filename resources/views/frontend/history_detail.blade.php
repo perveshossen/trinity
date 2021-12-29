@@ -105,42 +105,13 @@
                 </div>
             </div>
             <div class="row insta-slide">
+                @foreach ($movements as $movement)
                 <div class="col-lg-3">
                     <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/1.jpg"
-                                alt=""></a>
+                        <a href="{{ $movement->link }}" target="_blank"><img src="{{ asset('uploads/movement') }}/{{ $movement->photo }}" alt="{{ $movement->photo }}"></a>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/2.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/3.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/4.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/5.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="slide-item">
-                        <a href="https://www.instagram.com/trinitydang/" target="_blank"><img src="{{ asset('frontend_asset') }}/images/insta/6.jpg"
-                                alt=""></a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

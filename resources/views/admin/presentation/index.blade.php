@@ -39,10 +39,7 @@
                         </form>
                   </div>
                 </div>
-          </div>
-
-
-          
+          </div>          
           <div class="col-lg-4">
             @if (session('still_focus'))
             <div class="alert alert-success">{{ session('still_focus') }}</div>
@@ -81,6 +78,41 @@
               </div>
         </div>
 
+             
+        <div class="col-lg-4">
+          @if (session('gateway_video'))
+          <div class="alert alert-success">{{ session('gateway_video') }}</div>
+          @endif
+          <div class="card">
+              <div class="card-header">Update Getaway Video</div>
+              <div class="card-body">
+                  <form method="POST" action="{{ route('getaway.video.update', $gateway_video->id) }}" enctype="multipart/form-data">
+                      @csrf
+                      <div class="form-group">
+                        <label>Heading</label>
+                        <input name="heading" type="text" class="form-control"  value="{{ $gateway_video->heading }}">
+                      </div>
+                      <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control" name="description" rows="4">{{ $gateway_video->description }}</textarea>
+                      </div>
+                      <div class="form-group">
+                        <label>Video Link</label>
+                        <input name="video_link" type="text" class="form-control"  value="{{ $gateway_video->video_link}}">
+                      </div>
+                      <div class="form-group">
+                        <label>Video Thumbnail</label>
+                        <input name="video_thumbnail" type="file" class="form-control">
+                      </div>
+                      <img style="width: 50px;" src="{{ asset('uploads/gateway_video') }}/{{ $gateway_video->video_thumbnail}}" alt="{{ $gateway_video->video_thumbnail}}">
+                      <br>
+                      <br>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+              </div>
+            </div>
+      </div>
+
       </div>
         <div class="row mb-5">
             <div class="col-lg-4">
@@ -104,6 +136,13 @@
                               <label>Presentation Video Link</label>
                               <textarea name="video_link" rows="4" class="form-control">{{ $presentation_info->video_link }}</textarea>
                             </div>
+                            <div class="form-group">
+                              <label>Video Thumbnail</label>
+                              <input name="video_thumbnail" type="file" class="form-control">
+                            </div>
+                            <img style="width: 50px;" src="{{ asset('uploads/home_video') }}/{{ $presentation_info->video_thumbnail}}" alt="{{ $presentation_info->video_thumbnail}}">
+                            <br>
+                            <br>
                             <button type="submit" class="btn btn-primary">Submit</button>
                           </form>
                     </div>

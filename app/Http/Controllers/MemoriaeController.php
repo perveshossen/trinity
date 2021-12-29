@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Memory;
+use App\Memoriae_two;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Image;
 
-class MemoryController extends Controller
+class MemoriaeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class MemoryController extends Controller
      */
     public function index()
     {
-        return view('admin.Memoriae.index', [
-            'memories' => Memory::latest()->get()
+        return view('admin.memoriae_two.index', [
+            'memories' => Memoriae_two::latest()->get(),
         ]);
     }
 
@@ -39,19 +39,20 @@ class MemoryController extends Controller
      */
     public function store(Request $request)
     {
-        $memory_id = Memory::insertGetId($request->except('_token', 'photo') + [
+        $memoriae_id = Memoriae_two::insertGetId($request->except('_token', 'photo') + [
             'created_at' => Carbon::now(),
         ]);
         
+        
         if ($request->hasFile('photo')) {
             $uploaded_photo = $request->file('photo');
-            $new_photo_name = $memory_id.".".$uploaded_photo->getClientOriginalExtension();
-            $new_photo_location = 'public/uploads/memoriae_photo/'.$new_photo_name;
+            $new_photo_name = $memoriae_id .".".$uploaded_photo->getClientOriginalExtension();
+            $new_photo_location = 'public/uploads/memoriae_two_photo/'.$new_photo_name;
            Image::make($uploaded_photo)->save(base_path($new_photo_location));
-           Memory::find($memory_id)->update([
+           Memoriae_two::find($memoriae_id)->update([
               'photo' =>  $new_photo_name,
            ]);
-           return back()->with('add_memory','Memoriae added successfully!');
+           return back()->with('add_memoriae','Memoriae added successfully!');
         } else {
             return back()->withErrors('No file was uploaded');
         }
@@ -65,8 +66,8 @@ class MemoryController extends Controller
      */
     public function show($id)
     {
-        return view('admin.Memoriae.show', [
-            'info' => Memory::find($id)
+        return view('admin.memoriae_two.show', [
+            'info' => Memoriae_two::find($id)
         ]);
     }
 
@@ -91,18 +92,18 @@ class MemoryController extends Controller
     public function update(Request $request, $id)
     {
         
-        Memory::find($id)->update($request->except('_token', 'photo'));
+        Memoriae_two::find($id)->update($request->except('_token', 'photo'));
         
         if ($request->hasFile('photo')) {
-            if(Memory::find($id)->photo != 'default.png'){
-               $old_photo_location = 'public/uploads/memoriae_photo/'.Memory::find($id)->photo;
+            if(Memoriae_two::find($id)->photo != 'default.png'){
+               $old_photo_location = 'public/uploads/memoriae_two_photo/'.Memoriae_two::find($id)->photo;
                 unlink(base_path($old_photo_location));
             }
             $uploaded_photo = $request->file('photo');
             $new_photo_name = $id.".".$uploaded_photo->getClientOriginalExtension();
-            $new_photo_location = 'public/uploads/memoriae_photo/'.$new_photo_name;
+            $new_photo_location = 'public/uploads/memoriae_two_photo/'.$new_photo_name;
            Image::make($uploaded_photo)->save(base_path($new_photo_location));
-           Memory::find($id)->update([
+           Memoriae_two::find($id)->update([
               'photo' =>  $new_photo_name,
            ]);
            return back()->with('update_memory','Memoriae updated successfully!');
@@ -119,12 +120,12 @@ class MemoryController extends Controller
      */
     public function destroy($id)
     {
-        if(Memory::find($id)->photo != 'default.png'){
-           $old_photo_location = 'public/uploads/memoriae_photo/'.Memory::find($id)->photo;
-            unlink(base_path($old_photo_location));
-        }
-        Memory::find($id)->delete();
-        return back()->with('delete_memoriae', 'Memoriae deleted successfully!!');
         
+        if(Memoriae_two::find($id)->photo != 'default.jpg'){
+            $old_photo_location = 'public/uploads/memoriae_two_photo/'.Memoriae_two::find($id)->photo;
+             unlink(base_path($old_photo_location));
+         }
+         Memoriae_two::find($id)->delete();
+         return back()->with('delete_memoriae', 'Memoriae deleted successfully!!');
     }
 }

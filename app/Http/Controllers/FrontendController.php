@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Contact_box;
+use App\Getaway_video;
 use App\Getway_slider;
 use App\Histroy_banner;
 use App\Home_banner;
@@ -11,6 +12,7 @@ use App\Insider;
 use App\Interview_story;
 use App\Join_community;
 use App\Logo;
+use App\Memoriae_two;
 use App\Memory;
 use App\Movement;
 use App\Publication_banner;
@@ -92,6 +94,7 @@ class FrontendController extends Controller
             'socials' => Social::latest()->get(),
             'categories' => Shop_Category::latest()->get(),
             'movements' => Movement::latest()->get(),
+            'memoriaes' => Memoriae_two::get()->all()
         ]);
     }
     public function insider()
@@ -110,7 +113,8 @@ class FrontendController extends Controller
             'logo' => Logo::find(1),
             'socials' => Social::latest()->get(),
             'sliders' => Getway_slider::latest()->get(),
-            'movements' => Movement::latest()->get()
+            'movements' => Movement::latest()->get(),
+            'gateway_video' => Getaway_video::find(1)
         ]);
     }
     public function contact()
@@ -127,6 +131,7 @@ class FrontendController extends Controller
         return view('frontend.history_detail', [
             'logo' => Logo::find(1),
             'socials' => Social::latest()->get(),
+            'movements' => Movement::latest()->get(),
         ]);
     }
     public function signupletter(Request $request){

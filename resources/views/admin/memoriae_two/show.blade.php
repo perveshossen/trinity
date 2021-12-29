@@ -2,7 +2,7 @@
 @section('title')
     Update Memoriae | Dashboard
 @endsection
-@section('memoriae')
+@section('memoriae_two')
     active
 @endsection
 @section('dashboard_content')
@@ -27,7 +27,7 @@
                 <div class="card">
                     <div class="card-header"> Update Memoriae</div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('memoriae.update', $info->id) }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('memoriae_two.update', $info->id) }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                               <label>Heading</label>
@@ -41,7 +41,7 @@
                               <label>Memoriae photo</label>
                               <input name="photo" type="file" class="form-control">
                             </div>
-                            <img style="width: 50px;" src="{{ asset('uploads/memoriae_photo') }}/{{ $info->photo }}" alt="{{ $info->photo }}">
+                            <img style="width: 50px;" src="{{ asset('uploads/memoriae_two_photo') }}/{{ $info->photo }}" alt="{{ $info->photo }}">
                             <br>
                             <br>
                             <button type="submit" class="btn btn-primary">Submit</button>

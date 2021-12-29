@@ -94,6 +94,15 @@
           </div><!-- menu-item -->
         </a><!-- sl-menu-link -->
         
+        
+        <label class="sidebar-label">Shop Page</label>
+        <a href="{{ route('memoriae_two.index') }}" class="sl-menu-link @yield('memoriae_two')">
+          <div class="sl-menu-item">
+            <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
+            <span class="menu-item-label">Memoriae</span>
+          </div><!-- menu-item -->
+        </a><!-- sl-menu-link -->
+        
         <label class="sidebar-label">Insider Page</label>
         <a href="{{ route('insider.index') }}" class="sl-menu-link @yield('insider')">
           <div class="sl-menu-item">

@@ -60,6 +60,7 @@ Route::post('/service/detail/update/{id}', 'ExtraController@servicedetailupdate'
 Route::post('/shop/banner/update/{id}', 'ExtraController@shopbannerupdate')->name('shop.banner.update');
 Route::post('/logo/update/{id}', 'ExtraController@logoupdate')->name('logo.update');
 Route::post('/still/focus/update/{id}', 'ExtraController@stillfocusupdate')->name('still.focus.update');
+Route::post('/getaway/video/update/{id}', 'ExtraController@getwayvideoupdate')->name('getaway.video.update');
 
 
 // Auth::routes();
@@ -75,6 +76,10 @@ Route::resource('home/shop/category', 'CategoryController');
 
 //MemoryController
 Route::resource('home/memoriae', 'MemoryController');
+
+
+//MemoriaeController
+Route::resource('home/memoriae_two', 'MemoriaeController');
 
 //BannerController
 Route::resource('home/banner', 'BannerController');

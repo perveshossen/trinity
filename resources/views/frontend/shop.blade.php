@@ -62,66 +62,57 @@
             </div>
 
             <div class="row">
+                @foreach ($memoriaes as $memoriae)
+                    
+                @php
+                $width_round = round($loop->index/2);
+                $width_out_round = $loop->index/2;
+                @endphp
+                @if ($width_out_round == $width_round)
+                @php
+                $display = 'left';
+                @endphp
+                @else   
+                @php 
+                $display = 'right';
+                @endphp
+                @endif
+                
+                @if ($display === 'right')
+                <div class="col-lg-6 col-md-6">
+                    <div class="img-part top-cut">
+                        <img src="{{ asset('uploads/memoriae_two_photo') }}/{{ $memoriae->photo }}" alt="{{ $memoriae->photo }}">
+                    </div>
+                </div>
+                @endif
+
+
+                
+                <div class="col-lg-6 col-md-6 large-device">
+                    <div class="text-part text-center">
+                        <h5>{{ $memoriae->heading }}</h5>
+                        <a href="{{ $memoriae->button_link }}">Shop Now</a>
+                    </div>
+                </div>
+
+
+                
+                @if ($display === 'left')
                 <div class="col-lg-6 col-md-6">
                     <div class="img-part">
-                        <img src="{{ asset('frontend_asset') }}/images/shop/8.jpg" alt="">
+                        <img src="{{ asset('uploads/memoriae_two_photo') }}/{{ $memoriae->photo }}" alt="{{ $memoriae->photo }}">
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="text-part text-center">
-                        <h5>Her MEMORIAE</h5>
-                        <a href="#">Shop Now</a>
-                    </div>
-                </div>
+                @endif
 
-                <div class="col-lg-6 col-md-6 large-device">
-                    <div class="text-part text-center">
-                        <h5>COCO MEMORIAE</h5>
-                        <a href="#">Shop Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="img-part top-cut">
-                        <img src="{{ asset('frontend_asset') }}/images/shop/8.jpeg" alt="">
-                    </div>
-                </div>
                 <div class="col-lg-6 col-md-6 small-device">
                     <div class="text-part text-center">
-                        <h5>COCO MEMORIAE</h5>
-                        <a href="#">Shop Now</a>
+                        <h5>{{ $memoriae->heading }}</h5>
+                        <a href="{{ $memoriae->button_link }}">Shop Now</a>
                     </div>
                 </div>
 
-
-                <div class="col-lg-6 col-md-6">
-                    <div class="img-part top-cut">
-                        <img src="{{ asset('frontend_asset') }}/images/shop/4.jpeg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="text-part text-center ">
-                        <h5>Her MEMORIAE IV</h5>
-                        <a href="#">Shop Now</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-md-6 large-device">
-                    <div class="text-part text-center ">
-                        <h5>Her MEMORIAE V</h5>
-                        <a href="#">Shop Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="img-part top-cut">
-                        <img src="{{ asset('frontend_asset') }}/images/shop/5.jpeg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 small-device">
-                    <div class="text-part text-center ">
-                        <h5>Her MEMORIAE V</h5>
-                        <a href="#">Shop Now</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
